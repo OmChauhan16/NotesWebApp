@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.note-app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.new-note {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.new-note input,
+.new-note textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.new-note button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.new-note button:hover {
+  background-color: #218838;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamic grid columns */
+  grid-auto-flow: dense; /* Enables filling of gaps */
+  gap: 20px; /* Spacing between the notes */
+}
+
+.note {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  word-wrap: break-word; /* Ensure long words wrap */
+  box-sizing: border-box; /* Include padding in box sizing */
+}
+
+.note h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.note p {
+  margin: 10px 0;
+  flex-grow: 1;
+}
+
+.note span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: gray;
+}
+
+.note button {
+  margin-top: 10px;
+  background-color: #dc3545;
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.note button:hover {
+  background-color: #c82333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Optional: To make certain notes taller for testing */
+/* .note:nth-child(2) {
+  grid-row: span 2; /* This will make the second note taller */
+/*} */

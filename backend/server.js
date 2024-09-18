@@ -10,9 +10,9 @@ app.use(bodyParser.json());
 // Create connection to MySQL
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root', // Replace with your MySQL username
-  password: '', // Replace with your MySQL password
-  database: 'NotesApp' // Database name
+  user: 'root', 
+  password: '', 
+  database: 'NotesApp' 
 });
 
 db.connect(err => {
@@ -22,7 +22,7 @@ db.connect(err => {
 
 // Get all notes (READ operation)
 app.get('/notes', (req, res) => {
-  const sql = 'SELECT * FROM notes ORDER BY created_at DESC'; // Fetch notes in descending order of creation
+  const sql = 'SELECT * FROM notes ORDER BY created_at DESC'; 
   db.query(sql, (err, result) => {
     if (err) throw err;
     res.json(result); // Send the fetched notes as a JSON response

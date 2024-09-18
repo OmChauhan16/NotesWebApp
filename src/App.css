@@ -2,6 +2,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .new-note {
@@ -13,13 +14,22 @@
   width: 100%;
   padding: 10px;
   margin: 5px 0;
+  border: 1px solid #ccc; /* Adding border for better visibility */
+  border-radius: 4px; /* Rounding input edges */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.new-note textarea {
+  min-height: 10px;
+  resize: vertical; /* Allow vertical resizing but not horizontal */
 }
 
 .new-note button {
-  padding: 10px;
-  background-color: #28a745;
+  padding: 10px 15px;
+  background-color: #000100;
   color: white;
   border: none;
+  border-radius: 4px; /* Rounding button edges */
   cursor: pointer;
 }
 
@@ -30,12 +40,12 @@
 .notes-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamic grid columns */
-  grid-auto-flow: dense; /* Enables filling of gaps */
-  gap: 20px; /* Spacing between the notes */
+  grid-gap: 20px; /* Consistent spacing between the notes */
+  grid-auto-flow: dense; /* Ensures the grid fills gaps */
 }
 
 .note {
-  background-color: #f0f0f0;
+  background-color: #e3e3bf;
   padding: 15px;
   border-radius: 8px;
   display: flex;
@@ -43,6 +53,7 @@
   justify-content: space-between;
   word-wrap: break-word; /* Ensure long words wrap */
   box-sizing: border-box; /* Include padding in box sizing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .note h3 {
@@ -52,7 +63,7 @@
 
 .note p {
   margin: 10px 0;
-  flex-grow: 1;
+  flex-grow: 1; /* Allow the paragraph to take up remaining space */
 }
 
 .note span {
@@ -64,17 +75,20 @@
 
 .note button {
   margin-top: 10px;
-  background-color: #dc3545;
+  margin-left: 190px;
+  padding: 10px;
+  background-color: #e3e3bf;
   color: white;
   border: none;
+  border-radius: 4px; /* Rounding button edges */
   cursor: pointer;
 }
 
-.note button:hover {
-  background-color: #c82333;
+/* .note button:hover {
+  background-color: #171702;
+} */
+
+body{
+  background-color: #4c928e;
 }
 
-/* Optional: To make certain notes taller for testing */
-/* .note:nth-child(2) {
-  grid-row: span 2; /* This will make the second note taller */
-/*} */

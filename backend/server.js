@@ -42,6 +42,7 @@ app.post('/notes', (req, res) => {
 // Delete a note (DELETE operation)
 app.delete('/notes/:id', (req, res) => {
   const { id } = req.params;
+  console.log(id)
   const sql = 'DELETE FROM notes WHERE Id = ?';
   db.query(sql, [id], (err, result) => {
     if (err) throw err;
